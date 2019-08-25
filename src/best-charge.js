@@ -5,7 +5,6 @@ function bestCharge(selectedItems) {
   return printAllInfos(selectItemInfos, promotionInfos);
 }
 
-
 function dealInput(selectedItems) {
   let dealedItems = [];
   for (let i = 0; i < selectedItems.length; i++) {
@@ -16,7 +15,6 @@ function dealInput(selectedItems) {
   }
   return dealedItems;
 }
-
 
 function queryItemInfo(dealedItems) {
   let itemInfos = loadAllItems();
@@ -72,7 +70,6 @@ function calculateBestCharge(selectItemInfos) {
     else return "无优惠";
   }
 }
-
 
 function calculateActualPrice(selectItemInfos) {
   let total = 0;
@@ -158,33 +155,4 @@ function printLineInfo(selectItemInfo) {
   itemInfo = selectItemInfo.name + " x " + selectItemInfo.count + " = "
     + selectItemInfo.price * selectItemInfo.count + "元\n";
   return itemInfo;
-}
-
-function loadAllItems() {
-  return [{
-    id: 'ITEM0001',
-    name: '黄焖鸡',
-    price: 18.00
-  }, {
-    id: 'ITEM0013',
-    name: '肉夹馍',
-    price: 6.00
-  }, {
-    id: 'ITEM0022',
-    name: '凉皮',
-    price: 8.00
-  }, {
-    id: 'ITEM0030',
-    name: '冰锋',
-    price: 2.00
-  }];
-}
-
-function loadPromotions() {
-  return [{
-    type: '满30减6元'
-  }, {
-    type: '指定菜品半价',
-    items: ['ITEM0001', 'ITEM0022']
-  }];
 }
